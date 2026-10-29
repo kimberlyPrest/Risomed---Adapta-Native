@@ -41,7 +41,7 @@ Documento de baseline assinado pela consultora e validado pelo cliente, com as 4
 - [ ] Vendas/mês no ICP obtidas do cliente
 - [ ] Documento de baseline redigido com valores, janela, método e ressalvas
 - [ ] Assinatura da consultora + validação do cliente registradas
-- [ ] Documento armazenado na pasta do projeto com acesso restrito (mesmo padrão da fila — SPEC-1-006/CA-1-01c)
+- [ ] Documento armazenado na pasta do projeto com acesso restrito (mesmo padrão da fila — SPEC-1-006/CA-1-01e)
 
 ## Critérios de aceite
 
@@ -53,15 +53,15 @@ Documento de baseline assinado pela consultora e validado pelo cliente, com as 4
 | Etapa | Prova | Comando/ação | Resultado esperado | Evidência |
 |---|---|---|---|---|
 | RED | Sem baseline: K1–K3 não verificáveis | Tentar responder "qual o speed-to-lead atual?" sem documento | Falha: não há número congelado | Registro da pergunta sem resposta (nota no dossiê) |
-| GREEN | Coleta operando | 1 semana de coleta via fila com definições escritas | 4 métricas calculáveis com % de cobertura | Planilha de coleta |
+| GREEN | Coleta operando | 1 semana de coleta via fila com definições escritas | 4 métricas calculáveis com % de cobertura | Registro de coleta |
 | GREEN | Janela mínima cumprida (CA-1-03) | Fechar a janela: 4 semanas OU 20 leads, o que ocorrer por último | Janela fechada com critério atendido e registrado | Documento de congelamento com datas e contagem |
 | REFACTOR/REGRESSÃO | Congelamento | Documento final assinado + validação do cliente | Baseline congelado, régua única | Documento assinado |
 
 **Dados/fixtures:** coleta real da fila; vendas/mês do ICP fornecidas pelo cliente (1–2, conforme call 26/08 — confirmar na coleta).
-**Caminhos de erro obrigatórios:** amostra fraca (ressalta ou estende), cobertura de origem <80% (estende), cliente não fornece vendas (usar estimativa declarada com ressalva).
+**Caminhos de erro obrigatórios:** amostra fraca (ressalva ou estende), cobertura de origem <80% (estende), cliente não fornece vendas (usar estimativa declarada com ressalva).
 **Quando não houver código:** cenário verificável acima.
 
-**Evidência exigida:** documento de baseline assinado + planilha de coleta.
+**Evidência exigida:** documento de baseline assinado + registro de coleta.
 
 ## Tasks vinculadas
 
@@ -73,4 +73,4 @@ Documento de baseline assinado pela consultora e validado pelo cliente, com as 4
 
 | Data | Origem do sinal | Micro-spec/task | Motivo |
 |---|---|---|---|
-| | | | |
+| 2026-10-29 | Emenda 01/2026 da SPEC-1-001 | — | Referência de acesso restrito atualizada de CA-1-01c para CA-1-01e (segregação por papel) e "planilha de coleta" trocada por "registro de coleta". Nenhum critério desta SPEC foi alterado. |

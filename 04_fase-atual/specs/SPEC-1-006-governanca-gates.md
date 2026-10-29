@@ -14,10 +14,10 @@ Documento de governança assinado com: (1) regra de fonte única de verdade na F
 
 - **Inclui:** documento de governança + registro dos gates com prazo + política LGPD mínima da F1.
 - **Fora de escopo:** implementação de qualquer gate (são decisões humanas das fases futuras); contrato formal LGPD; DPO.
-- **Entradas e pré-condições:** decisões D2–D6 registradas; disponibilidade do Alexandre (viaja 11–25/09 — decisões podem ser coletadas por escrito).
+- **Entradas e pré-condições:** decisões D2–D6 registradas; disponibilidade do Alexandre para validar o documento.
 - **Saídas/artefatos:** documento de governança (1 página) + tabela de gates com responsável/prazo.
-- **Dependências e responsáveis:** consultora redige; Alexandre valida por escrito (e-mail/WhatsApp) mesmo durante a viagem.
-- **Risco e plano B:** Alexandre não responder durante a viagem → coletar decisões por escrito com prazo pós-viagem (25/09); fila opera com regras provisórias da consultora registradas como tal.
+- **Dependências e responsáveis:** consultora redige; Alexandre valida por escrito (e-mail/WhatsApp).
+- **Risco e plano B:** Alexandre não responder no prazo → coletar decisões por escrito com prazo registrado; fila opera com regras provisórias da consultora registradas como tal.
 - **Rollback ou reversão:** documento revisável por emenda; gates são decisões humanas e podem ser redecididos com registro.
 
 ## Fluxo e regras
@@ -30,8 +30,8 @@ Documento de governança assinado com: (1) regra de fonte única de verdade na F
 
 | Cenário | Dado/condição | Resultado esperado | Caminho de erro/recuperação |
 |---|---|---|---|
-| Principal | Cliente responde durante a semana | Documento completo e validado | — |
-| Limite | Alexandre viajando | Decisões coletadas por escrito; itens pendentes marcados com prazo 25/09 | Fila opera com regras provisórias registradas |
+| Principal | Cliente responde dentro do prazo | Documento completo e validado | — |
+| Limite | Cliente não responde no prazo | Decisões coletadas por escrito; itens pendentes com prazo registrado | Fila opera com regras provisórias registradas |
 | Falha | SDR ausente sem cobertura definida | Regra de cobertura do documento define quem assume (CEO) | SLA violado é registrado, não escondido |
 
 ## Checklist de execução
@@ -40,6 +40,7 @@ Documento de governança assinado com: (1) regra de fonte única de verdade na F
 - [ ] Regra de fonte única de verdade definida e registrada
 - [ ] Rotina de captação manual definida (horários + responsável)
 - [ ] Dono operacional da fila definido com o cliente
+- [ ] Papéis de acesso da fila definidos (só-leitura × editor × dona) e alinhados com a segregação da SPEC-1-001 (CA-1-01e)
 - [ ] Regra de cobertura de SLA definida
 - [ ] Gates D7-1..D7-5 com responsável e prazo registrados
 - [ ] Política LGPD mínima documentada
@@ -47,8 +48,8 @@ Documento de governança assinado com: (1) regra de fonte única de verdade na F
 
 ## Critérios de aceite
 
-- [ ] **CA-1-06:** aprovado SOMENTE com os 4 itens completos (pass/fail por item): (i) gates D7-1..D7-5 com responsável e prazo; (ii) regra de fonte única de verdade definida (registro único aqui — SPEC-1-001 apenas referencia); (iii) rotina de captação manual definida; (iv) dono operacional da fila definido. Item pendente do cliente (viagem) = CA não batido, com prazo 25/09 registrado.
-- [ ] **CA-1-06a:** documento de governança validado por escrito pelo cliente (ou itens pendentes com prazo explícito pós-viagem).
+- [ ] **CA-1-06:** aprovado SOMENTE com os 4 itens completos (pass/fail por item): (i) gates D7-1..D7-5 com responsável e prazo; (ii) regra de fonte única de verdade definida (registro único aqui — SPEC-1-001 apenas referencia); (iii) rotina de captação manual definida; (iv) dono operacional da fila definido. Item pendente do cliente = CA não batido, com prazo registrado.
+- [ ] **CA-1-06a:** documento de governança validado por escrito pelo cliente (ou itens pendentes com prazo explícito).
 
 ## TDD da SPEC
 
@@ -58,8 +59,8 @@ Documento de governança assinado com: (1) regra de fonte única de verdade na F
 | GREEN | Documento operando | Preencher as 6 seções com respostas do cliente | Documento completo com validação | Documento + e-mail de aprovação |
 | REFACTOR/REGRESSÃO | Revisão semanal da F1 | Conferir aderência à rotina e aos donos definidos | Desvios registrados e corrigidos | Registro semanal |
 
-**Dados/fixtures:** decisões D2–D6 já registradas; calendário do Alexandre (viagem 11–25/09).
-**Caminhos de erro obrigatórios:** cliente não responde (prazo pós-viagem + regras provisórias), SDR ausente (regra de cobertura), gate vencido (escalação à consultora).
+**Dados/fixtures:** decisões D2–D6 já registradas; calendário do Alexandre.
+**Caminhos de erro obrigatórios:** cliente não responde (prazo registrado + regras provisórias), SDR ausente (regra de cobertura), gate vencido (escalação à consultora).
 **Quando não houver código:** cenário verificável acima.
 
 **Evidência exigida:** documento de governança + validação por escrito do cliente.
@@ -74,4 +75,4 @@ Documento de governança assinado com: (1) regra de fonte única de verdade na F
 
 | Data | Origem do sinal | Micro-spec/task | Motivo |
 |---|---|---|---|
-| | | | |
+| 2026-10-29 | Emenda 01/2026 da SPEC-1-001 | — | Inclui item de papéis de acesso alinhado ao novo CA-1-01e; removidas as datas de fallback da viagem de 11–25/09 (já vencidas) e o prazo 25/09 das cláusulas de pendência. Nenhum critério desta SPEC foi afrouxado. |
